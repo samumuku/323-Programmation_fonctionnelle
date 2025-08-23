@@ -31,7 +31,7 @@ Vous n'allez pas implémenter toutes ces questions. Faites-en le plus possible e
 
 Créer un programme en mode console qui:
 
-  - Demande à l'utilisateur d'introduire un titre de film
+  - Demande à l'utilisateur d'introduire un titre de film de l’univers SW
   - Retrouve le film voulu en calculant la [distance de Levenshtein](https://fr.wikipedia.org/wiki/Distance_de_Levenshtein) avec chaque film de SWAPI. Etablir une valeur de cette distance au delà de laquelle on estime qu'on n'a pas reconnu le titre.
   - Ecrit le "contenu de l'affiche" du film trouvé: 
     - Titre

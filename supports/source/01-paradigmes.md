@@ -1,10 +1,25 @@
 # Paradigmes de programmation
 
 Il existe plusieurs manières d’aborder la communication avec les machines au travers de programmes contenant des instructions, ce qu’on nomme *paradigme*.
+Ces paradigmes sont à plusieurs niveaux, voici une vue pour mieux les appréhender:
+
+Paradigmes de programmation
+├── Impératif
+│   ├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)
+│   ├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)
+│   └── Parallèle/Concurrent (C#, Go, Erlang, Rust, Zik)
+└── Déclaratif
+    ├── Fonctionnel (F#, Haskell, Lisp, ML, Scala, C#, Rust, Java)
+    ├── Logique (Prolog)
+    └── Contraintes (CHR, Oz/Mozart, MiniZinc)
+	
+
+*On constate que beaucoup de langages sont "multi-paradigmes", cela s’explique par le fait qu’ils ont évolué pour supporter les nouveaux paradigmes 
+devenus populaires, notamment pour les aspects fonctionnels qui peuvent alléger le code source...*
 
 ## Impératif ou Déclaratif
 
-On distingue 2 ensembles principaux:
+On distingue 2 ensembles principaux:
 
 1. Impératif
 2. Déclaratif
@@ -22,10 +37,10 @@ Pour afficher 1,2,3,4,5, on pourrait avoir le pseudo-code suivant:
 Afficher 1
 Afficher 2
 
-DÉCLARER i
-POUR i de 3 à 5 FAIRE
-    AFFICHER i
-FIN POUR
+DÉCLARER i
+POUR i de 3 à 5 FAIRE
+    AFFICHER i
+FIN POUR
 ```
 Ce code va imposer une suite d'opérations à faire par l'ordinateur dans le but de **construire** un résultat.
 
@@ -40,7 +55,7 @@ Afficher suite
 ```
 Ce code va déclarer ce qu'**est** le résultat et l'afficher en suite
 
-## Procédural
+## Impératif > Procédural
 C’est ce qui est fait en 1ère année à l’ETML:
 
 ```csharp
@@ -60,7 +75,7 @@ void PrintRemainingInstructions()
 
 Chaque instruction est éxécutée l’une après l’autre tout en pouvant aggréger du code dans des fonctions qui sont appelées ici ou là...
 
-## Orienté objet
+## Impératif > Orienté objet
 C’est ce qui est fait en 2ème année à l’ETML:
 
 ```csharp
@@ -95,7 +110,7 @@ L’idée derrière la programmation objet est de réunir les données et les fo
 > Attention toutefois car ce paradigme peut à l’extrême devenir contre-productif car difficile à maintenir ou non indiqué pour les architectures en réseau où il est plus efficace de faire transiter les données uniquement... 
 Cet avertissement a pour but d’éviter une polarisation de type *il faut toujours tout faire en objet*.
 
-## Fonctionnel
+## Déclaratif > Fonctionnel
 
 C’est ce qui est fait en 3ème année à l’ETML ;-)
 
