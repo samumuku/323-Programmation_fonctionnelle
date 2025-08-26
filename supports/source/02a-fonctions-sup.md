@@ -33,11 +33,38 @@ void FSuperior(Action x)
 >
 > Action`<`param1,param2,param3e...`>`
 
-#### Exemple d’utilisation de `Action` pour afficher des messages (*clone* de Console.WriteLine)
+#### Exemple d’utilisation de `Action` pour afficher logger messages (*clone* de Console.WriteLine)
 
 ```csharp
-Action<string> Print = message => Console.WriteLine(message);
-Print("Bonjour"); // Affichera "Bonjour" dans la console
+// Différentes manières de logger les messages
+
+// #1 : méthode "classique", dans un fichier
+void MethodToFile(string text)
+{
+    File.AppendAllText("log.txt", "(" + DateTime.Now.ToString() + ", Method) " + text + Environment.NewLine);
+}
+
+// #2 : Méthode avec lambda, dans un fichier
+Action<string> ActionToFile = text => File.AppendAllText("log.txt", "(" + DateTime.Now.ToString() + ", Action) " + text + Environment.NewLine);
+
+// #1 : méthode "classique", dans la console
+void MethodToConsole(string text)
+{
+    Console.WriteLine("(" + DateTime.Now.ToString() + ", Method) " + text);
+}
+
+// #2 : Méthode avec lambda, dans la console
+Action<string> ActionToConsole = text => Console.WriteLine("(" + DateTime.Now.ToString() + ", Method) " + text);
+
+
+// Ici, on déclare l'outil de logging. Toute l'application se sert de Log pour logger
+Action<string> Log = MethodToFile;
+// Action<string> Log = ActionToFile;
+// Action<string> Log = MethodToConsole;
+// Action<string> Log = ActionToConsole;
+
+// Et maintenant on logge sans se soucier de où ça va
+Log("Using 'void ToFile(string text)'");
 ```
 
 ### 2. FUNC (Avec valeur de retour)
