@@ -3,7 +3,7 @@
 Il existe plusieurs manières d’aborder la communication avec les machines au travers de programmes contenant des instructions, ce qu’on nomme *paradigme*.
 Ces paradigmes sont à plusieurs niveaux, voici une vue pour mieux les appréhender:
 
-Paradigmes de programmation
+Paradigmes de programmation  
 ├── Impératif  
 │   ├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)  
 │   ├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)  
