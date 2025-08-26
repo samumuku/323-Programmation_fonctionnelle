@@ -4,14 +4,14 @@ Il existe plusieurs manières d’aborder la communication avec les machines au 
 Ces paradigmes sont à plusieurs niveaux, voici une vue pour mieux les appréhender:
 
 Paradigmes de programmation
-├── Impératif
-│   ├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)
-│   ├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)
-│   └── Parallèle/Concurrent (C#, Go, Erlang, Rust, Zik)
-└── Déclaratif
-    ├── Fonctionnel (F#, Haskell, Lisp, ML, Scala, C#, Rust, Java)
-    ├── Logique (Prolog)
-    └── Contraintes (CHR, Oz/Mozart, MiniZinc)
+├── Impératif  
+│   ├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)  
+│   ├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)  
+│   └── Parallèle/Concurrent (C#, Go, Erlang, Rust, Zik)  
+└── Déclaratif  
+    ├── Fonctionnel (F#, Haskell, Lisp, ML, Scala, C#, Rust, Java)  
+    ├── Logique (Prolog)  
+    └── Contraintes (CHR, Oz/Mozart, MiniZinc)  
 	
 
 *On constate que beaucoup de langages sont "multi-paradigmes", cela s’explique par le fait qu’ils ont évolué pour supporter les nouveaux paradigmes 
