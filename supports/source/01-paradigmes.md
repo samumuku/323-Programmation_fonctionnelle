@@ -5,13 +5,13 @@ Ces paradigmes sont à plusieurs niveaux, voici une vue pour mieux les appréhen
 
 Paradigmes de programmation  
 ├── Impératif  
-│   ├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)  
-│   ├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)  
-│   └── Parallèle/Concurrent (C#, Go, Erlang, Rust, Zik)  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Procédural (C, C#*, Javascript*, Python*, Rust*, Go*)  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Orienté objet (C#, Java, C++, Python, Rust, Zik, Javascript, Go)  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Parallèle/Concurrent (C#, Go, Erlang, Rust, Zik)  
 └── Déclaratif  
-    ├── Fonctionnel (F#, Haskell, Lisp, ML, Scala, C#, Rust, Java)  
-    ├── Logique (Prolog)  
-    └── Contraintes (CHR, Oz/Mozart, MiniZinc)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Fonctionnel (F#, Haskell, Lisp, ML, Scala, C#, Rust, Java)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Logique (Prolog)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Contraintes (CHR, Oz/Mozart, MiniZinc)  
 	
 
 *On constate que beaucoup de langages sont "multi-paradigmes", cela s’explique par le fait qu’ils ont évolué pour supporter les nouveaux paradigmes 
