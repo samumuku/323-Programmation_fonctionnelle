@@ -122,3 +122,15 @@ numbers.Where(n => {
  return n>2 && n % 2 == 0;
 });
 ```
+
+# Important
+
+- Chaque objet a une fonction ToString() par défaut, donc si on fait
+
+```c#
+public override string ToString() {
+  return "....."
+}
+```
+
+- Cela sert à afficher quelque chose customisé au moment où on doit "afficher un objet" avec Console.Writeline
