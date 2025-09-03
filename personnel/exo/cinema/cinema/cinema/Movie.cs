@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cinema
 {
-    internal class Movie
+    public class Movie
     {
         public string Title;
         public string Genre;
