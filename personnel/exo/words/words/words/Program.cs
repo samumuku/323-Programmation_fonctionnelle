@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace words
@@ -40,8 +41,13 @@ namespace words
             }
 
             // Partie 1.3
-            Action<double> calcAverage = i => words[i]
-            Action<string> equalToAvg = word => 
+            words.Where(x => x.Length > words.Average(c => c.Length)).OrderByDescending(x => x).ToList().ForEach(x => Console.WriteLine($":ont autant de caractères que la moyenne du nombre de caractères de la liste: {x}"));
+
+            words.Where(x => x != words.ElementAt(0) && x != words.ElementAt(words.Length - 1) && x != words.ElementAt(words.Length - 2)).ToList().ForEach(x => Console.WriteLine($"Données parasite 1 : {x}"));
+
+            words.Skip(0).SkipLast();
+
+            words.OrderBy(x => x).SkipWhile(x => !Regex.IsMatch(x, "{a-zA-Z}")).ToList().ForEach(x => Console.WriteLine($"Données parasite 2 : {x}"));
         }
     }
 }

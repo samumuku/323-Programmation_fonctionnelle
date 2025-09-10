@@ -4,6 +4,8 @@
 
 # Checkpoint 2
 
+9/10 points
+
 # Checkpoint 3
 
 # Checkpoint 4

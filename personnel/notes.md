@@ -134,3 +134,49 @@ public override string ToString() {
 ```
 
 - Cela sert à afficher quelque chose customisé au moment où on doit "afficher un objet" avec Console.Writeline
+
+### Séquence 3 10.09.2025
+
+- Correction de l'exercice Words
+
+## Fonction Map
+
+Immutabilité
+
+- Select => va selectionner des string(ou autre chose) d'une liste
+
+```c#
+IEnumerable<string> names = cid5d.Select(person => person.Name).ToList
+```
+
+- Select
+  - Modification de valeurs
+
+```c#
+IEnumerable<int> numberOfSiblings = cid5d.Select(person => person.Sisters + person.Brothers);
+```
+
+- Tuple = Structure de données
+
+  - On met les valeurs dans les parenthèses (1, 2, ...), puis ensuite si on veut les utiliser ils deviennent des Item. Donc on retrouve Item1, Item2, etc.
+  - Après on fait un Where, qui va vérifier chaque valeur en la comparant avec le Item. (exemple)
+
+- Classes anonymes
+
+```c#
+var anon = new (first=1, second=2, third=3);
+Console.WriteLine(anon.first);
+Console.WriteLine(anon.second);
+Console.WriteLine(anon.third);
+```
+
+- Dictionary/ToDictionary
+  - Comme si on fait un GroupBy. On lui donne un ID
+  - exemple :
+  ```c#
+  Dictionary<int, Person> dico;
+  Person toto = dico[712]
+  // plus rapide avec le Dictionary qu'avec LinQ
+  List<Person> people;
+  Person toto = people.Where(p => p.Id == 712).First();
+  ```
