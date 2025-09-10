@@ -8,42 +8,36 @@ namespace marche
 {
     public class Produit
     {
-        public Produit(int emplacement, string producteur, string produit, int quantite, string unite, double prix)
+        public Produit()
         {
-            Emplacement = emplacement;
-            Producteur = producteur;
-            Product = produit;
-            Quantite = quantite;
-            Unite = unite;
-            Prix = prix;
         }
 
-        public int Emplacement
+        public int Location
         {
             get;
             set;
         }
-        public string Producteur
+        public string Producer
         {
             get;
             set;
         }
-        public string Product
+        public string ProductName
         {
             get;
             set;
         }
-        public int Quantite
+        public int Quantity
         {
             get;
             set;
         }
-        public string Unite
+        public string Unit
         {
             get;
             set;
         }
-        public double Prix
+        public double PricePerUnit
         {
             get;
             set;
