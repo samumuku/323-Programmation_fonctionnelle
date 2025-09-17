@@ -180,3 +180,64 @@ Console.WriteLine(anon.third);
   List<Person> people;
   Person toto = people.Where(p => p.Id == 712).First();
   ```
+
+### Séquence 4 17.09.2025
+
+Donnée vs Information
+
+- On va déduire des informations avec des données
+- Information nous apprend qqch
+- Data Scientist
+
+## Reduce
+
+Quelques fonctions de réduction :
+
+- Sum
+- Average
+- Min
+- Max
+- etc...
+
+Calcul d'une moyenne
+
+```c#
+double averageAge = cid5d.Average(person => person.Age);
+double averageSiblings = cid5d.Average(person => person.Sisters + person.Brothers);
+```
+
+Minimum
+
+```c#
+int minAge = cid5d.Min(person => person.Age);
+```
+
+GroupBy
+
+```c#
+var groups = cid5d
+.GroupBy(p => p.Brothers + p.Sisters)
+.Select(group => new {
+  Agegroup = group.Key
+  Members = group.Select(p => p.Name)
+}).ToList();
+
+//affichage
+groups.ForEach( group => {
+  Console.Write(String.Join(",", group.Members));
+  Console.Write(group.Members.Count() > 1 ? " ont " : " a ");
+  Console.Write(group.Agegroup + "frère/soeur");
+  Console.WriteLine();
+})
+```
+
+Aggregate
+
+signature = on reconnait une fonction grace a ces parametres, son retour et type
+
+```c#
+var min = cid5d.Aggregate(
+  new Person() {Brothers = 99}, //Seed
+  (a, b) => a.Brothers < b.Brothers ? a : b, //Min logic
+  person => person.Name); //Result transformer
+```
