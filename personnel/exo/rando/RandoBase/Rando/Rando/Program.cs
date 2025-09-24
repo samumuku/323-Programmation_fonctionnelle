@@ -20,19 +20,6 @@ namespace Rando
 
 
         }
-        public class Trackpoint
-        {
-            public double Latitude { get; set; }
-            public double Longitude { get; set; }
-            public double Elevation { get; set; }
-
-            public Trackpoint(double lat, double lon, double ele)
-            {
-                Latitude = lat;
-                Longitude = lon;
-                Elevation = ele;
-            }
-        }
 
     }
 }
