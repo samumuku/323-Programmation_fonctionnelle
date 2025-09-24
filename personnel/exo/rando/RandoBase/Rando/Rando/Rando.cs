@@ -39,10 +39,10 @@ namespace Rando
                 Debug.WriteLine(point.ToString());
             }
             // dessiner
-            /*Pen myPen = new Pen(Color.Red);
+            Pen myPen = new Pen(Color.Red);
             myPen.Width = 2;
             Point[] filteredPoints = filteredTrackpoints.ToArray();
-            this.CreateGraphics().DrawLines(myPen, filteredPoints);*/
+            this.CreateGraphics().DrawLines(myPen, filteredPoints);
         }
     }
 }
