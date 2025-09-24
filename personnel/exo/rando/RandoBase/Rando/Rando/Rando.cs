@@ -32,17 +32,17 @@ namespace Rando
             // emplacement du fichier gpx
             trackpoints = ReadGpx("../../../../../../gpx/gemmikandersteg.gpx");
 
-            List<Point> filteredTrackpoints = trackpoints.Select(trackpoint => new Point((int)((trackpoint.Latitude-46.39)*6500), (int)((trackpoint.Longitude-7.61)*6500))).ToList();
+            List<Point> transformedTrackpoints = trackpoints.Select(trackpoint => new Point((int)((trackpoint.Latitude - 46.39) * 6500), (int)((trackpoint.Longitude - 7.61) * 6500))).ToList();
 
-            foreach (Point point in filteredTrackpoints)
-            {
-                Debug.WriteLine(point.ToString());
-            }
             // dessiner
             Pen myPen = new Pen(Color.Red);
             myPen.Width = 2;
-            Point[] filteredPoints = filteredTrackpoints.ToArray();
+            Point[] filteredPoints = transformedTrackpoints.ToArray();
             this.CreateGraphics().DrawLines(myPen, filteredPoints);
+
+            //Func<Trackpoint, Trackpoint, Trackpoint>()
+            double longueur = 0;
+            transformedTrackpoints.Aggregate((current, next) => {return longueur += Math.Sqrt(current.X - next.X * 2) + (current.Y - next.Y * 2))); }
         }
     }
 }
