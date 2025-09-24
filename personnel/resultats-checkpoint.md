@@ -8,11 +8,15 @@
 
 # Checkpoint 3
 
-5/10 (peut-être 6)
+6/10 points
 
 # Checkpoint 4
 
+5/10 points
+
 # Checkpoint 5
+
+0/26 points
 
 # Checkpoint 6
 
@@ -20,4 +24,4 @@
 
 # Total
 
-23(24)/31
+29/41 points
