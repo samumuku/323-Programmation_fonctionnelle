@@ -44,9 +44,6 @@ namespace ConsoleApp1
             // TODO: 02 Charger le contenu texte du fichier B (indice: File.ReadAllLines...)
             string[] linesB = File.ReadAllLines(pathB);
 
-            linesA.Select(line => line).ToList().ForEach(line => Console.WriteLine("Lignes A " + line));
-            linesB.Select(line => line).ToList().ForEach(line => Console.WriteLine("Lignes B " + line));
-
             // TODO: 03 Vérifier que les fichier ont le même nombre de lignes
             if (linesA.Length != linesB.Length)
             {
@@ -80,26 +77,25 @@ namespace ConsoleApp1
 
             if (ignoreSpaces)
             {
-                Console.WriteLine("ignored spaces A : \n" + cleanSpaces(String.Join("\n", linesA)));
-                Console.WriteLine("ignored spaces B : \n" + cleanSpaces(String.Join("\n", linesB)));
+                linesA = linesA.Select(line => cleanSpaces(line)).ToArray();
+                linesB = linesB.Select(line => cleanSpaces(line)).ToArray();
             }
 
             if (ignoreTabs)
             {
-                Console.WriteLine("ignored tabs A : \n" + cleanTabs(String.Join("\n", linesA)));
-                Console.WriteLine("ignored tabs B : \n" + cleanTabs(String.Join("\n", linesB)));
+                linesA = linesA.Select(line => cleanTabs(line)).ToArray();
+                linesB = linesB.Select(line => cleanTabs(line)).ToArray();
             }
 
             if (ignoreCase)
             {
-                Console.WriteLine("enforced cases A : \n" + enforceCase(String.Join("\n", linesA)));
-                Console.WriteLine("enforced cases B : \n" + enforceCase(String.Join("\n", linesB)));
+                linesA = linesA.Select(line => enforceCase(line)).ToArray();
+                linesB = linesB.Select(line => enforceCase(line)).ToArray();
             }
 
-
-
             // TODO: 06 Créer et remplir une liste de LinesComparison à partir de linesA et linesB
-            // List<LinesComparison> comparisons = new();
+
+            //List<LinesComparison> comparisons = new();
 
             // TODO: 07 Sélectionner les lignes qui ont des différences
             var diffLines = new List<LinesComparison>();
