@@ -16,7 +16,7 @@
 
 # Checkpoint 5
 
-0/26 points
+6 (probablement)/26 points
 
 # Checkpoint 6
 
@@ -24,4 +24,4 @@
 
 # Total
 
-29/41 points
+35/67 points
