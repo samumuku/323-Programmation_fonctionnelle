@@ -44,7 +44,8 @@ namespace ConsoleApp1
             // TODO: 02 Charger le contenu texte du fichier B (indice: File.ReadAllLines...)
             string[] linesB = File.ReadAllLines(pathB);
 
-            //linesA.Select(line => line).ToList().ForEach(line => Console.WriteLine(line));
+            linesA.Select(line => line).ToList().ForEach(line => Console.WriteLine("Lignes A " + line));
+            linesB.Select(line => line).ToList().ForEach(line => Console.WriteLine("Lignes B " + line));
 
             // TODO: 03 Vérifier que les fichier ont le même nombre de lignes
             if (linesA.Length != linesB.Length)
@@ -59,9 +60,9 @@ namespace ConsoleApp1
             // Une fonction de nettoyage reçoit un texte (une ligne de fichier) et renvoie cette même ligne adaptée
             // Il existe la fonction Replace sur les string...
             // Le caractère tabulation s’écrit \t
-            Func<string, string> cleanSpaces = text => text;
-            Func<string, string> cleanTabs = text => text;
-            Func<string, string> enforceCase = text => text;
+            Func<string, string> cleanSpaces = text => text.Contains(" ") ? text.Replace(" ", "") : text;
+            Func<string, string> cleanTabs = text => text.Contains("\t") ? text.Replace("\t", "") : text;
+            Func<string, string> enforceCase = text => text.ToLower();
 
             /// OPTIONS DE NETTOYAGE
             Console.WriteLine("Choisir les options:");
@@ -76,6 +77,25 @@ namespace ConsoleApp1
             bool ignoreCase = Console.ReadLine() == "o";
 
             // TODO:  05 Appliquer le nettoyage selon la demande utilisateur
+
+            if (ignoreSpaces)
+            {
+                Console.WriteLine("ignored spaces A : \n" + cleanSpaces(String.Join("\n", linesA)));
+                Console.WriteLine("ignored spaces B : \n" + cleanSpaces(String.Join("\n", linesB)));
+            }
+
+            if (ignoreTabs)
+            {
+                Console.WriteLine("ignored tabs A : \n" + cleanTabs(String.Join("\n", linesA)));
+                Console.WriteLine("ignored tabs B : \n" + cleanTabs(String.Join("\n", linesB)));
+            }
+
+            if (ignoreCase)
+            {
+                Console.WriteLine("enforced cases A : \n" + enforceCase(String.Join("\n", linesA)));
+                Console.WriteLine("enforced cases B : \n" + enforceCase(String.Join("\n", linesB)));
+            }
+
 
 
             // TODO: 06 Créer et remplir une liste de LinesComparison à partir de linesA et linesB
