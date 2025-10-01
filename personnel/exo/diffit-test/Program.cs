@@ -8,8 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -79,23 +77,29 @@ namespace ConsoleApp1
             {
                 linesA = linesA.Select(line => cleanSpaces(line)).ToArray();
                 linesB = linesB.Select(line => cleanSpaces(line)).ToArray();
+                Console.WriteLine(">Espaces nettoyés");
             }
 
             if (ignoreTabs)
             {
                 linesA = linesA.Select(line => cleanTabs(line)).ToArray();
                 linesB = linesB.Select(line => cleanTabs(line)).ToArray();
+                Console.WriteLine(">Tabulations nettoyés");
             }
 
             if (ignoreCase)
             {
                 linesA = linesA.Select(line => enforceCase(line)).ToArray();
                 linesB = linesB.Select(line => enforceCase(line)).ToArray();
+                Console.WriteLine(">Casse forcée");
             }
 
             // TODO: 06 Créer et remplir une liste de LinesComparison à partir de linesA et linesB
 
             //List<LinesComparison> comparisons = new();
+
+            var result = linesA.Zip(linesB, (a, b) => new { A = a, B = b });
+            Console.WriteLine(result);
 
             // TODO: 07 Sélectionner les lignes qui ont des différences
             var diffLines = new List<LinesComparison>();
@@ -129,21 +133,21 @@ namespace ConsoleApp1
             byte key = Convert.ToByte(Console.ReadLine());
 
         }
-            public class LinesComparison
+        public class LinesComparison
+        {
+            public int Number { get; set; }
+            public string ContentA { get; set; } = "";
+            public string ContentB { get; set; } = "";
+
+            /// <summary>
+            /// Ajuste le numéro de ligne...
+            /// </summary>
+            public int NumberHuman
             {
-                public int Number { get; set; }
-                public string ContentA { get; set; } = "";
-                public string ContentB { get; set; } = "";
-
-                /// <summary>
-                /// Ajuste le numéro de ligne...
-                /// </summary>
-                public int NumberHuman
-                {
-                    get => Number + 1;
-                }
-
-                public int LengthVariation { get => Math.Abs(ContentA.Length - ContentB.Length); }
+                get => Number + 1;
             }
+
+            public int LengthVariation { get => Math.Abs(ContentA.Length - ContentB.Length); }
+        }
     }
 }
