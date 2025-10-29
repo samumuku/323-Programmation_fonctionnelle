@@ -241,3 +241,22 @@ var min = cid5d.Aggregate(
   (a, b) => a.Brothers < b.Brothers ? a : b, //Min logic
   person => person.Name); //Result transformer
 ```
+
+
+# 29.10.2025
+
+## Pureté
+
+- toujours meme resultat
+- tant que les parametres sont les memes
+- par ex: fonction pour le temps actuel = impure
+- 2eme ex: fonction mathematique = pure
+
+## Immutabilité
+
+- des que une variable, tableau, objet est défini, on ne peut plus changer sa valeur
+- si on fait "string exemple = "exemple"" et on fait un += après, une nouvelle variable doit être crée
+- ex: x = 5, si on veut y ajouter des donnees on fait y = x + 3
+
+## Recursivité
+

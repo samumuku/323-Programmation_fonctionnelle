@@ -16,12 +16,12 @@
 
 # Checkpoint 5
 
-6 (probablement)/19 points
+11/19 points
 
 # Checkpoint 6
 
-# Checkpoint 7
+4/10 points // a mon avis
 
 # Total
 
-35/60 points
+44/70 points
